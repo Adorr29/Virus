@@ -52,7 +52,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0
-  MaxDistance: 50
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -297,6 +297,7 @@ MonoBehaviour:
   parts: []
   deathParticle: {fileID: 6280647537081335158, guid: 06a2330e58e8c924689698066c3bf2ed,
     type: 3}
+  healParticle: {fileID: 0}
   name: Big Unit
   description: Mobile Unit slow but long range and big damage
   icon: {fileID: 21300000, guid: cae897312dfdf0b47a69c7ed9edf157a, type: 3}
