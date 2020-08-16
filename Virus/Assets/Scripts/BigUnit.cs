@@ -26,6 +26,9 @@ public class BigUnit : OffensiveUnit
     // Update is called once per frame
     new void Update()
     {
+        if (isPreview)
+            return;
+
         base.Update();
 
         firingDelay -= Time.deltaTime;

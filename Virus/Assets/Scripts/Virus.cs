@@ -39,6 +39,9 @@ public abstract class Virus : Entity
     // Update is called once per frame
     protected new void Update()
     {
+        if (isPreview)
+            return;
+
         base.Update();
 
         if (moving)

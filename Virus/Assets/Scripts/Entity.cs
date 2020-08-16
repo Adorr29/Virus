@@ -27,6 +27,9 @@ public class Entity : MonoBehaviour
     public bool rotating => transform.rotation.eulerAngles.y != targetRotation;
 
     [HideInInspector]
+    public bool isPreview = false;
+
+    [HideInInspector]
     public float buildProgress = 1f;
 
     public float targetRotation { get; private set; }
@@ -211,6 +214,9 @@ public class Entity : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
+        if (isPreview)
+            return;
+
         BuildProgress();
 
         if (buildProgress < 1f)

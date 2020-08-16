@@ -29,6 +29,9 @@ public class LightUnit : OffensiveUnit
     // Update is called once per frame
     new void Update()
     {
+        if (isPreview)
+            return;
+
         base.Update();
 
         firingDelayLeft -= Time.deltaTime;

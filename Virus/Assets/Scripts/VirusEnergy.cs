@@ -19,6 +19,9 @@ public class VirusEnergy : Virus
     // Update is called once per frame
     new void Update()
     {
+        if (isPreview)
+            return;
+
         base.Update();
     }
 

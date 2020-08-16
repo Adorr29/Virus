@@ -12,6 +12,9 @@ public class Wall : Entity
     // Start is called before the first frame update
     new void Start()
     {
+        if (isPreview)
+            return;
+
         base.Start();
     }
 }

@@ -17,6 +17,9 @@ public class Unit : Entity
     // Update is called once per frame
     protected new void Update()
     {
+        if (isPreview)
+            return;
+
         base.Update();
     }
 

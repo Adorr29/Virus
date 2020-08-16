@@ -306,6 +306,7 @@ public class GameManager : MonoBehaviour
     {
         Renderer renderer = gameObject.transform.GetComponent<Renderer>();
         Collider collider = gameObject.transform.GetComponent<Collider>();
+        Entity entity = gameObject.GetComponent<Entity>();
 
         if (renderer != null)
         {
@@ -316,6 +317,11 @@ public class GameManager : MonoBehaviour
         if (collider != null)
         {
             collider.enabled = false;
+        }
+
+        if (entity != null)
+        {
+            entity.isPreview = true;
         }
 
         for (int i = 0; i < gameObject.transform.childCount; i++)

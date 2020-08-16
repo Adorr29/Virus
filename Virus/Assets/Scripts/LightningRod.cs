@@ -27,6 +27,9 @@ public class LightningRod : Entity
     // Update is called once per frame
     new void Update()
     {
+        if (isPreview)
+            return;
+
         base.Update();
 
         if (buildProgress < 1f)
