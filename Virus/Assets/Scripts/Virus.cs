@@ -146,6 +146,7 @@ public abstract class Virus : Entity
             Vector3 offset = new Vector3(0f, 0.8f, 0f);
             MoveBetweenTwoPoint energyObj = Instantiate(energyObject);
 
+            energyObj.transform.parent = virus.transform;
             energyObj.startPoint = transform.position + offset;
             energyObj.endPoint = virus.transform.position + offset;
 
@@ -247,7 +248,7 @@ public abstract class Virus : Entity
         if (virus.hp < 1)
             virus.SetHp(1);
 
-        // TODO copy Virus AI vars
+        // copy Virus AI vars
         virus.danger = danger;
 
         if (transformCost > 0)
