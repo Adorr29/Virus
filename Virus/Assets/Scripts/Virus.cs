@@ -267,6 +267,10 @@ public abstract class Virus : Entity
 
         // limite danger level to 30
         danger = Mathf.Min(danger, 30);
+
+        // if damage is too high SpearDanger urgently
+        if (damage >= hpMax)
+            SpearDanger();
     }
 
     protected abstract void VirusUpdate();
