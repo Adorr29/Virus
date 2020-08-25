@@ -62,6 +62,7 @@ public class BigUnit : OffensiveUnit
 
         Bullet projectile = Instantiate(bullet, startPosition, Quaternion.identity);
 
+        projectile.owner = this;
         projectile.Launch(target, new Vector3(0f, 1f, 0f));
 
         FiringObject.GetComponent<AudioSource>().Play();

@@ -86,6 +86,7 @@ public class LightUnit : OffensiveUnit
         Vector3 offsetY = Vector3.up * 1f;
         Vector3 offsetXZ = direction * 1f;
 
+        projectile.owner = this;
         projectile.Launch(target, offsetXZ + offsetY);
 
         FiringObject.GetComponent<AudioSource>().Play();

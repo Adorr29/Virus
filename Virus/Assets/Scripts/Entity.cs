@@ -47,13 +47,13 @@ public class Entity : MonoBehaviour
         hpMax = life;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(Entity attacker, int damage)
     {
         // if no damage, dont remove hp
         if (damage <= 0)
             return;
 
-        OnDamageTaked(damage);
+        OnDamageTaked(attacker, damage);
 
         if (damage >= hp)
         {
@@ -66,7 +66,7 @@ public class Entity : MonoBehaviour
     }
 
     // callback function for AI
-    virtual protected void OnDamageTaked(int damage) { }
+    virtual protected void OnDamageTaked(Entity attacker, int damage) { }
 
     public void Heal(int amount)
     {

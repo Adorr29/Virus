@@ -264,7 +264,7 @@ public abstract class Virus : Entity
         Destroy(gameObject);
     }
 
-    protected override void OnDamageTaked(int damage)
+    protected override void OnDamageTaked(Entity attacker, int damage)
     {
         danger += damage;
 

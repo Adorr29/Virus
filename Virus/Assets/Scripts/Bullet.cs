@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     public ParticleSystem ExlosionParticle;
 
     [HideInInspector]
+    public Entity owner;
+    [HideInInspector]
     public Entity target;
     int targetLayer;
 
@@ -108,7 +110,7 @@ public class Bullet : MonoBehaviour
         Entity entity = GameManager.Get().GetEntity(damagePosition);
 
         if (entity?.gameObject.layer == targetLayer)
-            entity.TakeDamage(damage);
+            entity.TakeDamage(owner, damage);
 
         if (damageNearEntity)
         {
@@ -116,7 +118,7 @@ public class Bullet : MonoBehaviour
 
             foreach (Entity nearEntity in nearEntitys)
                 if (nearEntity.gameObject.layer == targetLayer)
-                    nearEntity.TakeDamage(damage / 2);
+                    nearEntity.TakeDamage(owner, damage / 2);
         }
     }
 }

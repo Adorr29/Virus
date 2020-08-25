@@ -122,6 +122,7 @@ public class VirusAttack : Virus
 
         Bullet projectile = Instantiate(bullet, startPosition, spikes[index].transform.rotation);
 
+        projectile.owner = this;
         projectile.Launch(target, new Vector3(0f, 0.4f, 0f));
     }
 }

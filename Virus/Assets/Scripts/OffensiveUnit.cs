@@ -59,4 +59,10 @@ public abstract class OffensiveUnit : Unit
     {
         targetEntity = null;
     }
+
+    protected override void OnDamageTaked(Entity attacker, int damage)
+    {
+        if (!moving && !rotating && targetEntity == null)
+            targetEntity = attacker;
+    }
 }
