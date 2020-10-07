@@ -35,7 +35,7 @@ public abstract class OffensiveUnit : Unit
             }
             else
             {
-                int autoAttackRange = Mathf.FloorToInt(attackRange * 1.5f);
+                int autoAttackRange = attackRange * 2;
                 IEnumerable<Entity> entitys = GameManager.Get().GetNearEntityAtRange(position, autoAttackRange).Where(e => e is Virus);
 
                 if (entitys.Count() > 0)
